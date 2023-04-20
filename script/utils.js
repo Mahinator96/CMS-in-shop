@@ -16,3 +16,11 @@ export const toBase64 = (file) => {
     reader.readAsDataURL(file);
   });
 };
+// Добавление знака рубля и форматирование числа для большей читабельности
+export const currencyFormatRUB = (number) => {
+  return new Intl.NumberFormat('ru-Ru', {
+    style: 'currency',
+    currency: 'RUB',
+    maximumFractionDigits: 0,
+  }).format(number);
+};

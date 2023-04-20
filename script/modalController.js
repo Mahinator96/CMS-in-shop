@@ -1,4 +1,5 @@
 // Реализация открытия и закрытия модального окна
+import { form } from "./elems.js";
 import { hidePreview } from "./previewController.js";
 
 // Ф-ия открытия модального окна
@@ -7,9 +8,12 @@ const openModal = (modal, classOpen) => {
 }
 // Ф-ия закрытия модального окна
 const closeModal = (modal, classOpen) => {
+  modal.classList.remove(classOpen);
   // Спрятать превью и убрать src
   hidePreview();
-  modal.classList.remove(classOpen);
+  // Очистить форму
+  form.reset();
+
 }
 
 // export функции с деструктуризацией
